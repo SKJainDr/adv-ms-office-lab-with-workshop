@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Advanced MS Office Lab — Invertis University Bareilly</title>
+<meta name="description" content="An interactive quiz-and-task game covering MS Word, Excel & PowerPoint for the VOI001 MS-Office Lab syllabus. Earn points and printable certificates." />
+<link rel="icon" href="assets/brand-orb.jpg" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/mockups.css" />
+</head>
+<body>
+
+<div id="app">
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-orb"><img src="assets/brand-orb.jpg" alt="Brand mark" /></div>
+      <div class="brand-text">
+        <div class="eyebrow">Invertis University Bareilly &middot; Advanced MS Office Lab</div>
+        <h1>Advanced MS Office <span>Lab</span></h1>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="stat-pill"><span class="dot"></span><span id="header-points">0 pts</span></div>
+      <button class="icon-btn" id="theme-toggle" title="Toggle dark / light mode">🌙</button>
+      <button class="icon-btn" id="reset-btn" title="Reset progress">↺</button>
+    </div>
+  </div>
+
+  <div id="view-root"></div>
+</div>
+
+<div class="modal-overlay hidden" id="modal-overlay"></div>
+<div class="points-toast" id="points-toast"></div>
+
+<script src="js/mockups.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

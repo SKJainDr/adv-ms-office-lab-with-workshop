@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Advanced MS Office Workshop Booklet — Invertis University Bareilly</title>
+<meta name="description" content="Interactive lab record booklet for the Advanced MS Office Workshop — 12 sections, 60 tasks. Record your method, procedure, screenshots and results, all saved in your browser." />
+<link rel="icon" href="assets/brand-orb.jpg" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/mockups.css" />
+<link rel="stylesheet" href="css/booklet.css" />
+</head>
+<body class="booklet-body">
+
+<div class="booklet-header">
+  <div>
+    <div class="crumb">
+      <a href="index.html">&larr; Advanced MS Office Lab</a> &middot;
+      <a href="guide/chapters/workshop-tasks/index.html" target="_blank" rel="noopener">Read the Task Guide (Chapter 8)</a>
+    </div>
+    <h1>Workshop Booklet &mdash; Lab Record &amp; Viva-Voce</h1>
+  </div>
+  <div class="actions">
+    <button id="booklet-print-btn" title="Print or save as PDF">&#128424; Print / Save PDF</button>
+    <button id="theme-toggle" title="Toggle dark/light theme">&#127769;</button>
+    <button id="booklet-reset-btn" title="Clear all saved data in this browser">&#8635; Reset</button>
+  </div>
+</div>
+
+<div id="booklet-root"><!-- rendered by booklet-app.js --></div>
+
+<div class="booklet-savebar">
+  <span class="save-status"><span class="dot"></span> <span id="save-status-text">All changes saved automatically in this browser</span></span>
+  <span>Advanced MS Office Workshop Booklet &middot; Invertis University Bareilly &middot; VOI001</span>
+</div>
+
+<footer class="pagefoot" style="text-align:center;padding:14px 22px;font-size:11.5px;color:var(--ink-soft);background:var(--surface);border-top:1px solid var(--line);">
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+    <img src="assets/brand-orb.jpg" alt="Invertis University mark" style="height:20px;width:20px;border-radius:50%;object-fit:cover;">
+    <img src="assets/university-logo.png" alt="Invertis University logo" style="height:20px;width:auto;">
+  </div>
+  Advanced MS Office Lab &middot; Prepared &amp; maintained by <b>Dr. S. K. Jain</b>,
+  Associate Professor in Physics, Department of Applied Sciences and Humanities, Invertis University, Bareilly, India &middot;
+  <a href="mailto:sanjeev.j@invertis.org" style="color:inherit;">sanjeev.j@invertis.org</a> &middot; &copy; 2026 Author. Site maintained by Dr. S. K. Jain.
+  <div style="margin-top:8px;">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=drskjain-mso-workshop-booklet" alt="Visitor count for this page" style="height:18px;vertical-align:middle;border-radius:4px;opacity:.9;">
+  </div>
+</footer>
+
+<script>
+  window.BOOKLET_GUIDE_BASE = "guide/chapters/workshop-tasks/index.html";
+  (function () {
+    var saved = "light";
+    try { saved = JSON.parse(localStorage.getItem("mso_theme") || '"light"'); } catch (e) {}
+    document.documentElement.setAttribute("data-theme", saved);
+  })();
+</script>
+<script src="js/booklet-data.js"></script>
+<script src="js/booklet-app.js"></script>
+<script>
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    var cur = document.documentElement.getAttribute("data-theme");
+    var next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("mso_theme", JSON.stringify(next)); } catch (e) {}
+    document.getElementById("theme-toggle").innerHTML = next === "dark" ? "&#9728;&#65039;" : "&#127769;";
+  });
+  (function () {
+    var t = document.documentElement.getAttribute("data-theme");
+    document.getElementById("theme-toggle").innerHTML = t === "dark" ? "&#9728;&#65039;" : "&#127769;";
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* ============================================================
+   Advanced MS Office Workshop Booklet — styles
+   Reuses the lab's existing CSS variables (--ink, --ink-solid, --surface,
+   --line, --word/--excel/--ppt/--netmail/--access, etc.) from style.css,
+   which must be loaded before this file.
+   ============================================================ */
+
+.booklet-body { background: var(--bg); min-height: 100vh; }
+
+.booklet-header {
+  background: var(--ink-solid); color: #fff; padding: 14px 22px;
+  display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+}
+.booklet-header .crumb { font-size: 12px; opacity: .85; letter-spacing: .02em; }
+.booklet-header .crumb a { color: #f2d9a6; text-decoration: none; }
+.booklet-header .crumb a:hover { text-decoration: underline; }
+.booklet-header h1 { font-size: 1.25rem; margin: 2px 0 0; font-family: var(--font-display); }
+.booklet-header .actions { display: flex; gap: 8px; align-items: center; }
+.booklet-header button { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: #fff;
+  border-radius: 8px; padding: 7px 12px; font-size: 12.5px; cursor: pointer; font-weight: 600; }
+.booklet-header button:hover { background: rgba(255,255,255,.22); }
+
+.booklet-cover {
+  max-width: 900px; margin: 22px auto; background: var(--surface); border-radius: var(--radius);
+  box-shadow: var(--shadow-soft); padding: 24px 28px; border: 1px solid var(--line);
+}
+.booklet-cover h2 { margin: 0 0 4px; font-family: var(--font-display); }
+.booklet-cover .sub { color: var(--ink-soft); font-size: 13.5px; margin-bottom: 16px; }
+.booklet-field-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.booklet-field-grid label { display: block; font-size: 11.5px; font-weight: 700; color: var(--ink-soft); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .03em; }
+.booklet-field-grid input {
+  width: 100%; padding: 9px 11px; border-radius: 9px; border: 1px solid var(--line);
+  background: var(--surface-2); color: var(--ink); font-family: var(--font-body); font-size: 13.5px; box-sizing: border-box;
+}
+
+.booklet-nav { max-width: 1200px; margin: 0 auto 6px; padding: 0 22px; display: flex; gap: 8px; flex-wrap: wrap; }
+.booklet-nav button {
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft); border-radius: 100px;
+  padding: 7px 14px; font-size: 12.5px; font-weight: 700; cursor: pointer;
+}
+.booklet-nav button.active { background: var(--fam-color, var(--ink-solid)); color: #fff; border-color: transparent; }
+
+.booklet-section { max-width: 1200px; margin: 0 auto 40px; padding: 0 22px; display: none; }
+.booklet-section.active { display: block; }
+
+.booklet-panel {
+  background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line); padding: 22px 26px; margin-bottom: 18px;
+}
+.booklet-panel h3 {
+  font-family: var(--font-display); font-size: 1rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--fam-color, var(--ink)); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--line);
+}
+.booklet-section-title { font-family: var(--font-display); font-size: 1.5rem; margin: 4px 0 2px; }
+.booklet-section-sub { color: var(--ink-soft); font-size: 13px; margin-bottom: 4px; }
+.booklet-guide-link {
+  display: inline-block; margin: 8px 0 18px; font-size: 12.5px; font-weight: 700; color: var(--fam-color, var(--word));
+  text-decoration: none; border-bottom: 1px dashed currentColor;
+}
+.booklet-guide-link:hover { opacity: .8; }
+
+.booklet-aims { margin: 0; padding-left: 20px; }
+.booklet-aims li { margin-bottom: 7px; font-size: 13.5px; line-height: 1.5; }
+
+textarea.booklet-fill {
+  width: 100%; box-sizing: border-box; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2);
+  color: var(--ink); font-family: var(--font-body); font-size: 13.5px; padding: 12px 14px; resize: vertical; min-height: 90px;
+}
+textarea.booklet-fill:focus { outline: 2px solid var(--fam-color, var(--word)); outline-offset: 1px; }
+
+.booklet-procedure-area {
+  width: 100%; box-sizing: border-box; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px 14px 14px;
+  font-family: var(--font-body); font-size: 13.5px; color: var(--ink); resize: vertical;
+  background-color: var(--surface-2);
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 27px, var(--line) 28px);
+  line-height: 28px; min-height: 340px;
+}
+html[data-theme="dark"] .booklet-procedure-area { background-image: repeating-linear-gradient(to bottom, transparent, transparent 27px, #3a3560 28px); }
+.booklet-procedure-hint { font-size: 11.5px; color: var(--ink-soft); margin: -6px 0 10px; }
+
+/* ---- screenshot frames ---- */
+.booklet-frames { display: flex; flex-wrap: wrap; gap: 18px; }
+.shot-frame {
+  border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); overflow: hidden;
+  display: flex; flex-direction: column; width: 420px;
+}
+.shot-frame-head { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: var(--surface); border-bottom: 1px solid var(--line); }
+.shot-label-input {
+  flex: 1; border: none; background: transparent; font-size: 12.5px; font-weight: 700; color: var(--ink);
+  padding: 4px 6px; border-radius: 6px;
+}
+.shot-label-input:focus { outline: 1px solid var(--line); background: var(--surface-2); }
+.shot-remove-btn {
+  border: none; background: transparent; color: var(--ink-soft); cursor: pointer; font-size: 14px; width: 26px; height: 26px;
+  border-radius: 50%; flex-shrink: 0;
+}
+.shot-remove-btn:hover { background: #f2dede; color: #a4373a; }
+
+.shot-frame-body {
+  position: relative; width: 100%; height: 260px; min-width: 220px; min-height: 150px; max-width: 100%;
+  resize: both; overflow: hidden; background:
+    repeating-conic-gradient(var(--surface-2) 0% 25%, var(--surface) 0% 50%) 50% / 18px 18px;
+  border-bottom: 1px solid var(--line); cursor: pointer;
+}
+.shot-frame-body img.shot-frame-img { width: 100%; height: 100%; object-fit: contain; display: block; background: #fff; }
+.shot-frame-placeholder {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; color: var(--ink-soft); font-size: 12px; text-align: center; padding: 10px;
+}
+.shot-upload-btn {
+  border: 1px solid var(--fam-color, var(--word)); color: var(--fam-color, var(--word)); background: transparent;
+  border-radius: 100px; padding: 5px 14px; font-size: 11.5px; font-weight: 700; cursor: pointer;
+}
+.shot-frame-controls { display: flex; align-items: center; gap: 10px; padding: 8px 10px; font-size: 11px; color: var(--ink-soft); }
+.shot-frame-controls input[type="range"] { width: 100px; }
+.shot-clear-btn { border: none; background: transparent; color: var(--ink-soft); font-size: 11px; cursor: pointer; text-decoration: underline; margin-left: auto; }
+
+.booklet-add-frame-btn {
+  align-self: flex-start; border: 2px dashed var(--line); background: transparent; color: var(--ink-soft);
+  border-radius: 12px; width: 420px; height: 260px; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px; cursor: pointer; font-size: 13px; font-weight: 700;
+}
+.booklet-add-frame-btn:hover { border-color: var(--fam-color, var(--word)); color: var(--fam-color, var(--word)); }
+.booklet-add-frame-btn .plus { font-size: 28px; line-height: 1; }
+
+/* ---- result table ---- */
+table.booklet-result { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.booklet-result th { background: var(--fam-color, var(--ink-solid)); color: #fff; text-align: left; padding: 8px 10px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .02em; }
+table.booklet-result td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.booklet-result select, table.booklet-result input[type="text"] {
+  width: 100%; box-sizing: border-box; border: 1px solid var(--line); border-radius: 6px; padding: 5px 7px;
+  background: var(--surface-2); color: var(--ink); font-family: var(--font-body); font-size: 12.5px;
+}
+
+/* ---- quiz ---- */
+.booklet-quiz-item { margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.booklet-quiz-item:last-child { border-bottom: none; }
+.booklet-quiz-q { font-weight: 700; font-size: 13.5px; margin-bottom: 8px; }
+.booklet-quiz-opts { display: flex; flex-direction: column; gap: 6px; }
+.booklet-quiz-opt { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); cursor: pointer; }
+.booklet-quiz-opt:hover { background: var(--surface-2); }
+.booklet-quiz-opt.correct { background: #e3f3e9; border-color: #1FAA59; }
+.booklet-quiz-opt.incorrect { background: #fbeaea; border-color: #D93A3A; }
+.booklet-quiz-score { font-size: 13px; font-weight: 700; margin-top: 6px; }
+.booklet-check-btn {
+  border: none; background: var(--fam-color, var(--ink-solid)); color: #fff; border-radius: 100px; padding: 9px 20px;
+  font-weight: 700; font-size: 13px; cursor: pointer; margin-top: 6px;
+}
+
+/* ---- viva ---- */
+.booklet-viva-item { margin-bottom: 14px; }
+.booklet-viva-q { font-size: 13.5px; margin-bottom: 6px; }
+.booklet-viva-q b { color: var(--fam-color, var(--word)); }
+textarea.booklet-viva-ans { min-height: 54px; }
+
+.booklet-savebar {
+  position: sticky; bottom: 0; background: var(--surface); border-top: 1px solid var(--line); padding: 10px 22px;
+  display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ink-soft); z-index: 20;
+}
+.booklet-savebar .save-status { display: flex; align-items: center; gap: 6px; }
+.booklet-savebar .dot { width: 8px; height: 8px; border-radius: 50%; background: #1FAA59; }
+
+@media print {
+  /* style.css defines a global "body * { visibility:hidden }" rule for the
+     certificate-printing feature on the main lab page; this page has no
+     #certificate-wrap, so override it back to visible for everything here. */
+  body.booklet-body *, .booklet-body { visibility: visible !important; }
+  .booklet-header .actions, .booklet-nav, .booklet-add-frame-btn, .shot-remove-btn, .booklet-check-btn,
+  .booklet-savebar, .shot-frame-controls { display: none !important; }
+  .booklet-section { display: block !important; }
+  .booklet-panel { break-inside: avoid; box-shadow: none; }
+}
